@@ -1,0 +1,14 @@
+.navbar {
+    width: 100%;
+    background-color: #171718; 
+}
+
+.navbar-brand img {
+    height: 50px;
+    /* Ajusta la altura del logo según sea necesario */
+}
+
+.navbar-nav {
+    margin-left: auto;
+    /* Alinea los elementos de navegación a la derecha */
+}
