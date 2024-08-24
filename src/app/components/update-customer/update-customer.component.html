@@ -1,1 +1,25 @@
-<p>update-customer works!</p>
+<div class="container">
+    <div class="card form-container">
+        <h2 class="card-header form-title">Modificar Usuario</h2>
+        <div class="card-body">
+            <form [formGroup]="updateCustomerForm" (ngSubmit)="updateCustomer()">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" class="form-control" required formControlName="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required formControlName="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Teléfono</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" required formControlName="phone">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Modificar</button>
+            </form>
+        </div>
+    </div>
+</div>

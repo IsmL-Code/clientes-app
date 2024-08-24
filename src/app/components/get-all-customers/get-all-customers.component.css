@@ -1,6 +1,6 @@
 .navbar {
     width: 100%;
-    background-color: #171718; 
+    background-color: #afe747; 
 }
 
 .navbar-brand img {
@@ -11,4 +11,8 @@
 .navbar-nav {
     margin-left: auto;
     /* Alinea los elementos de navegación a la derecha */
+}
+
+.update{
+    margin-right: 5px;
 }

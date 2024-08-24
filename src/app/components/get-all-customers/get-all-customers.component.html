@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <!-- Imagen en el lado izquierdo -->
             <a class="navbar-brand" href="#">
-                <img src="https://imagenes.eltiempo.com/files/image_1200_600/files/fp/uploads/2024/04/26/662bdc7846c99.r_d.476-238.jpeg"
+                <img src="https://img.freepik.com/vector-gratis/diseno-logotipo-local-tienda-degradado_23-2149613160.jpg"
                     alt="Logotipo">
             </a>
             <!-- Toggler para navegación en móviles -->
@@ -37,8 +37,13 @@
 
 
 <h2>Listado de clientes</h2>
-<button class="btn btn-primary" routerLink="/customer">Crear clientes</button>
 
+<div class="input-group mb-3">
+    <button class="btn btn-secondary" routerLink="/customer">Crear clientes</button>
+    <button class="btn btn-secondary"  (click)="generatePdf()">Imprimir</button>
+   
+    <input type="text" class="form-control"     placeholder="Buscar" aria-label="Username"    aria-describedby="basic-addon1" [(ngModel)]="filter" (ngModelChange)="onFilterChange($event)" style=" max-width:250px;">
+</div>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -46,16 +51,18 @@
             <th>Nombre</th>
             <th>Email</th>
             <th>Telefono</th>
-            <th>Editar</th>
+            <th>Acciones</th>
+           
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let customer of customers">
+        <tr *ngFor="let customer of filteredCusetomer">
             <td>{{ customer.id }}</td>
             <td>{{ customer.name }}</td>
             <td>{{ customer.email }}</td>
             <td>{{ customer.phone }}</td>
-            <td>  <button class="btn btn-primary">Editar</button></td>
+            <td>  <button class="btn btn-primary  update" routerLink="/customer/{{customer.id}}" >Editar</button></td>
+            <td>  <button class="btn btn-danger" (click)="deleteCustomer(customer.id)" >Eliminar</button></td>
         </tr>
     </tbody>
 </table>
